@@ -8,10 +8,10 @@ public:
     if(l >= candidates.size()) return;
     if(sum < 0) return;
     
-    dfs(candidates, l+1, sum, res, temp);
     temp.push_back(candidates[l]);
     dfs(candidates, l, sum - candidates[l], res, temp);
     temp.pop_back();
+    dfs(candidates, l+1, sum, res, temp);
   }
   
   vector<vector<int>> combinationSum(vector<int>& candidates, int target) {
